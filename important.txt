@@ -1,0 +1,26 @@
+1
+
+Vite 6
+Basically, I recommend waiting for official support, and in the meantime, create your project with Vite 6. Vite 7 has only been out for a day.
+
+Scaffolding your first Vite project - Vite Docs
+npm create vite@6
+Vite Latest
+But even with npm create vite@latest, it's possible to override the TailwindCSS Vite plugin's requirements. Add this to the end of your package.json file:
+
+How do I override nested NPM dependency versions? - StackOverflow
+{
+  "dependencies": {
+    "vite": "^7",
+    "tailwindcss": "^4",
+    "@tailwindcss/vite": "^4"
+  },
+  "overrides": {
+    "@tailwindcss/vite": {
+      "vite": "^7.0.0"
+    }
+  }
+}
+Then install it:
+
+npm install

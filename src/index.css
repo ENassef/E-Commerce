@@ -1,0 +1,270 @@
+
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@theme {
+    --color-maincolor: #0aad0a;
+    --color-light-color: #f0f3f2;
+    --shadow-main: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+        rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+        rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+    --font-main: "Outfit", sans-serif;
+    --color-rating-color: #ffc908;
+
+
+    --animate-shake: shake .75s ease-in-out infinite;
+    @keyframes shake {
+        0%,
+        100% {
+        transform: rotate(-15deg);
+        }
+        50% {
+        transform: rotate(15deg);
+        }
+    }
+}
+
+@utility container {
+    margin: 0 auto;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+    font-family: var(--font-main) !important;
+    text-transform: capitalize;
+    overflow-x: hidden;
+}
+.rating-color {
+    color: var(--rating-color);
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.icon{
+    @apply bg-green-300 hover:bg-green-600
+}
+
+.product:hover {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+}
+.product .btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.product:hover .btn {
+    opacity: 1;
+    transform: translateY(0%);
+}
+.font-sm {
+    font-size: 14px;
+}
+.text-main {
+    color: var(--main-color);
+}
+.bg-main {
+    background-color: var(--main-color) !important;
+}
+.bg-main-light {
+    background-color: var(--light-color) !important;
+}
+/*  .swiper-slide {
+  aspect-ratio: 16/9; 16:9 ratio 
+  width: 100%;
+} */
+
+.swiper-slide img {
+    height: 100%;
+} */
+
+
+/*  Start scroll style */
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body::-webkit-scrollbar {
+    background-color: #f0f3f2;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(1, 133, 76);
+    border-radius: 20px;
+    border: 3px solid #f0f3f2;
+}
+
+/*  End scroll style */
+
+
+/* Start Loading */
+.preloader {
+    --hue: 110;
+    --bg: hsl(var(--hue), 10%, 90%);
+    --fg: hsl(var(--hue), 10%, 10%);
+    --primary: hsl(var(--hue), 100%, 40%);
+    --trans-dur: 0.3s;
+    font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+.preloader {
+    text-align: center;
+    max-width: 20em;
+    width: 100%;
+}
+.preloader__text {
+    position: relative;
+    height: 1.5em;
+}
+.preloader__msg {
+    animation: msg 0.3s 13.7s linear forwards;
+    position: absolute;
+    width: 100%;
+}
+.preloader__msg--last {
+    animation-direction: reverse;
+    animation-delay: 14s;
+    visibility: hidden;
+}
+.cart {
+    display: block;
+    margin: 0 auto 1.5em auto;
+    width: 8em;
+    height: 8em;
+}
+.cart__lines,
+.cart__top,
+.cart__wheel1,
+.cart__wheel2,
+.cart__wheel-stroke {
+    animation: cartLines 2s ease-in-out infinite;
+}
+.cart__lines {
+    stroke: var(--primary);
+}
+.cart__top {
+    animation-name: cartTop;
+}
+.cart__wheel1 {
+    animation-name: cartWheel1;
+    transform: rotate(-0.25turn);
+    transform-origin: 43px 111px;
+}
+.cart__wheel2 {
+    animation-name: cartWheel2;
+    transform: rotate(0.25turn);
+    transform-origin: 102px 111px;
+}
+.cart__wheel-stroke {
+    animation-name: cartWheelStroke;
+}
+.cart__track {
+    stroke: hsla(var(--hue), 10%, 10%, 0.1);
+    transition: stroke var(--trans-dur);
+}
+
+
+
+
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue), 10%, 10%);
+        --fg: hsl(var(--hue), 10%, 90%);
+    }
+    .cart__track {
+        stroke: hsla(var(--hue), 10%, 90%, 0.1);
+    }
+}
+
+/* Animations */
+
+
+/* Animations */
+
+@keyframes bounce-in {
+    0% { transform: scale(0.95); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+.animate-bounce-in { animation: bounce-in 0.4s ease-out; }
+
+@keyframes checkmark {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+.animate-checkmark { animation: checkmark 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+@keyframes msg {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    99.9% {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@keyframes cartLines {
+    from,
+    to {
+        opacity: 0;
+    }
+    8%,
+    92% {
+        opacity: 1;
+    }
+}
+@keyframes cartTop {
+    from {
+        stroke-dashoffset: -338;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 338;
+    }
+}
+@keyframes cartWheel1 {
+    from {
+        transform: rotate(-0.25turn);
+    }
+    to {
+        transform: rotate(2.75turn);
+    }
+}
+@keyframes cartWheel2 {
+    from {
+        transform: rotate(0.25turn);
+    }
+    to {
+        transform: rotate(3.25turn);
+    }
+}
+@keyframes cartWheelStroke {
+    from,
+    to {
+        stroke-dashoffset: 81.68;
+    }
+    50% {
+        stroke-dashoffset: 40.84;
+    }
+}
+/* End Loading */
