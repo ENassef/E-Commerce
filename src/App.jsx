@@ -26,7 +26,7 @@ import BrandProducts from "./Pages/BrandsProducts/BrandsProducts";
 import Products from "./Pages/Products/Products";
 import ProductProvider from "./Context/ProductContext";
 import AllOrders from "./Pages/AllOrders/AllOdrers";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 let query = new QueryClient();
 
