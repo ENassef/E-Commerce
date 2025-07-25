@@ -26,6 +26,7 @@ import BrandProducts from "./Pages/BrandsProducts/BrandsProducts";
 import Products from "./Pages/Products/Products";
 import ProductProvider from "./Context/ProductContext";
 import AllOrders from "./Pages/AllOrders/AllOdrers";
+import { Analytics } from "@vercel/analytics/next"
 
 let query = new QueryClient();
 
@@ -150,6 +151,7 @@ function App() {
                             <ProductProvider>
                                 <RouterProvider router={router} />
                                 <ReactQueryDevtools />
+                                <Analytics/>
                             </ProductProvider>
                         </WishContextProvider>
                     </CartContextProvider>
