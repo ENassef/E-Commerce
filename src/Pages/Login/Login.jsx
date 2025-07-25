@@ -130,7 +130,7 @@ export default function Login() {
                                     <button
                                         disabled={btnStatus}
                                         type="submit"
-                                        className="w-fit max-w-[95px] bg-maincolor cursor-pointer text-white py-2 px-6 rounded-lg hover:bg-maincolor-dark transition-colors duration-200"
+                                        className="w-fit max-w-[95px] text-xs md:text-[16px] bg-maincolor cursor-pointer text-white py-2 px-6 rounded-lg hover:bg-maincolor-dark transition-colors duration-200"
                                     >
                                         {loading ? (
                                             <LoaderCircle className="animate-spin" />

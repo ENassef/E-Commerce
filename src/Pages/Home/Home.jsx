@@ -62,7 +62,7 @@ export default function () {
                 <Loading />
             ) : (
                 <>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 mb-8 h-[750px]">
+                    <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 gap-1  px-4 mb-8 h-[750px]">
                         {/* Main image - full width on mobile, 2 columns on desktop */}
                         <div className="md:col-span-2 h-full md:h-[750px] w-full ">
                             <img
