@@ -126,11 +126,11 @@ export default function Login() {
                                 </div>
 
                                 {/* SubMit Button */}
-                                <div className="flex gap-3 items-center">
+                                <div className="flex gap-3 md:flex-row flex-col justify-start items-start md:items-center">
                                     <button
                                         disabled={btnStatus}
                                         type="submit"
-                                        className="w-fit max-w-[95px] text-xs md:text-[16px] bg-maincolor cursor-pointer text-white py-2 px-6 rounded-lg hover:bg-maincolor-dark transition-colors duration-200"
+                                        className="w-fit bg-maincolor cursor-pointer text-white py-2 px-6 rounded-lg hover:bg-maincolor-dark transition-colors duration-200"
                                     >
                                         {loading ? (
                                             <LoaderCircle className="animate-spin" />
